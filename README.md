@@ -1,15 +1,21 @@
-# README:纳米孔蛋白质测序信号分析流程
+# README: Nanopore protein sequencing signal analysis process
 
 ## Background
 
-纳米孔探测系统以镶嵌在绝缘膜中纳米大小的孔为核心，而绝缘膜两侧是两个充满电解液的腔室。同时，在腔室的两端施加着固定大小的电压，这就使得纳米孔中不断有离子穿过，从而导致电流的形成。而在该电流作用下，生物分子能够受其驱动，穿过纳米孔。当纳米孔中有生物分子穿过时，离子的通过就会受到阻碍，从而导致孔中电流大小发生改变。而当穿过纳米孔的分子的大小、质量、电荷情况发生改变时，其也将引起不同的电流变化，这也就是纳米孔实验获得并用以分析的数据:即随时间变化的电信号。
+The nanopore detection system uses nanometer-sized holes embedded in an insulating film as its core, and the insulating film is flanked by two chambers filled with electrolyte. At the same time, a fixed voltage is applied to both ends of the chamber, which causes ions to continuously pass through the nanopores, leading to the formation of current. Under the action of this current, biomolecules can be driven by it and pass through the nanopores. When biomolecules pass through the nanopore, the passage of ions will be hindered, resulting in a change in the magnitude of the current in the pore. When the size, mass, and charge of the molecules passing through the nanopore change, it will also cause different current changes. This is the data obtained and analyzed by the nanopore experiment: the electrical signal that changes with time.
 
-这是我在上海交通大学大二下学期进行的科研项目。在项目中，我们的主要的工作是构建了一个用于分析纳米孔蛋白质测序信号的的python流程。最终，程序能够读取信号文件（来自于质谱或是纳米孔），随后进行信号的初始处理，绘制，拟合等工作。
+This is a scientific research project I conducted in the second semester of my sophomore year at Shanghai Jiao Tong University. In the project, our main work was to build a python pipeline for analyzing nanopore protein sequencing signals. Finally, the program can read the signal file (from mass spectrometry or nanopore), and then perform initial signal processing, drawing, fitting, etc.
 
-主要实验文件在：experiment.ipynb中(项目要求，代码注释主要是英文)，一些辅助计算代码在`python_scripts`文件夹中。而一些主要输出结果也展示在了图片中。<br>
-如下的图片即是项目所构建分析流程的重要中间输出,其展示了多种蛋白质对应的纳米孔电信号数据强度及其概率分布
-![输出](output4.png "输出")
+The main experimental files are in: `experiment.ipynb` (project requirements, code comments are mainly in English), and some auxiliary calculation codes are in the `python_scripts` folder. Some of the main output results are also shown in the picture（Drawn by python codes，demonstrated in the `experiment.iptnb` file）. <br>
+
+The first picture shows one important step in our pre-processing. In this step, we aim to fit Electric Intensity versus proteins' Molecular Weight. This helps us to understand and infer the basic principles of nanopore signals.
+
+![output7](output1.png "output")
+
+The following picture is an important intermediate output of the analysis process built by the project, which shows the nanopore electrical signal data intensity and probability distribution corresponding to various proteins.
+![Output](output3.png "Output")
 <br>
-而该图片则是项目重要的验证环节的输出，其展示了蛋白质纳米孔电信号数据和质谱数据之间的相似度，验证了我们流程的精确度：<br>
-![output7](output7.png "输出")
+This picture is the output of an important verification link of the project. It shows the similarity between the protein nanopore electrical signal data and mass spectrometry data, verifying the accuracy of our process:<br>
+![output7](output5.png "output")
 
+In addition, in the `Overview.docx` file, I wrote an overview article on nanopore signal identification. It mainly discusses the principles, development, and application status of nanopore protein recognition. (Written in Chinese)
